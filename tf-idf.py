@@ -4,21 +4,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 # nltk.download('punkt')
 
-documentA = 'the man went out for a walk'
-documentB = 'the children sat around the fire'
-
-tokens1 = nltk.word_tokenize(documentA)
-tokens2 = nltk.word_tokenize(documentB)
-
-uniqueWords = set(tokens1).union(set(tokens2))
-
-numOfWordsA = dict.fromkeys(uniqueWords, 0)
-for word in tokens1:
-    numOfWordsA[word] += 1
-numOfWordsB = dict.fromkeys(uniqueWords, 0)
-for word in tokens2:
-    numOfWordsB[word] += 1
-
 def computeTF(wordDict, bagOfWords):
     tfDict = {}
     bagOfWordsCount = len(bagOfWords)
@@ -46,24 +31,40 @@ def computeTFIDF(tfBagOfWords, idfs):
         tfidf[word] = val * idfs[word]
     return tfidf
 
-tfA = computeTF(numOfWordsA, tokens1)
-tfB = computeTF(numOfWordsB, tokens2)
 
-idfs = computeIDF([numOfWordsA, numOfWordsB])
+if __name__ == "__main__":
 
-tfidfA = computeTFIDF(tfA, idfs)
-tfidfB = computeTFIDF(tfB, idfs)
+    documentA = 'the man went out for a walk'
+    documentB = 'the children sat around the fire'
 
-df = pd.DataFrame([tfidfA, tfidfB])
+    #custom tf-idf implementation
+    tokens1 = nltk.word_tokenize(documentA)
+    tokens2 = nltk.word_tokenize(documentB)
 
-vectorizer = TfidfVectorizer()
-vectors = vectorizer.fit_transform([documentA, documentB])
-feature_names = vectorizer.get_feature_names_out()
-dense = vectors.todense()
-denselist = dense.tolist()
-df1 = pd.DataFrame(denselist, columns=feature_names)
+    uniqueWords = set(tokens1).union(set(tokens2))
 
-print(df)
-print(df1)
+    numOfWordsA = dict.fromkeys(uniqueWords, 0)
+    for word in tokens1:
+        numOfWordsA[word] += 1
+    numOfWordsB = dict.fromkeys(uniqueWords, 0)
+    for word in tokens2:
+        numOfWordsB[word] += 1
 
+    tfA = computeTF(numOfWordsA, tokens1)
+    tfB = computeTF(numOfWordsB, tokens2)
 
+    idfs = computeIDF([numOfWordsA, numOfWordsB])
+
+    tfidfA = computeTFIDF(tfA, idfs)
+    tfidfB = computeTFIDF(tfB, idfs)
+    df = pd.DataFrame([tfidfA, tfidfB])
+    print(df)
+
+    #built-in tf-ifd function
+    vectorizer = TfidfVectorizer()
+    vectors = vectorizer.fit_transform([documentA, documentB])
+    feature_names = vectorizer.get_feature_names_out()
+    dense = vectors.todense()
+    denselist = dense.tolist()
+    df1 = pd.DataFrame(denselist, columns=feature_names)
+    print(df1)
