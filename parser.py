@@ -9,7 +9,7 @@ def clean_sentence(text: str) -> str:
     """
     Returns a cleaned string
     """
-    text = re.sub(r'[\.\?\!\,\:\;\"\*\“\_\-\”\'\’\[\]\(\)]', '', text)
+    text = re.sub(r'[\.\?\!\,\:\;\"\*\“\_\-\”\'\’\[\]\(\)\@\%]', '', text)
     text = text.lower()
     text = [word for word in text.split() if word not in stopwords.words('english')]
     return " ".join(text)
@@ -41,7 +41,7 @@ def clean_file(file_path: str) -> (dict, list):
     return word_dict, tokens
 
 
-def parse(target_file: str) -> DataFrame:
+def parse(target_file: str) -> pd.DataFrame:
     """
     Returns a dataframe of vectorised text
     """
