@@ -1,10 +1,8 @@
 from tf_idf import *
+import numpy as np
+from rsvd import r_svd
 
-
-
-
-
-with open("test_article.txt", "r") as article:
+with open("test_datasets/test1.txt", "r") as article:
     data = article.read()
 
 sentences = nltk.sent_tokenize(data)
@@ -34,4 +32,12 @@ for n in range(len(tfList)):
     tfidfList.append(computeTFIDF(tfList[n], idfList))
 df = pd.DataFrame.from_dict(tfidfList)
 df.to_csv("test_tfidf.csv")
-print(df)
+# print(df)
+matrix = df.values
+
+r = 400
+q = 1
+p = 5
+
+U, S, VT = r_svd(matrix, r, q, p)
+print(U, S, VT)
