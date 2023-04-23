@@ -8,7 +8,7 @@ from itertools import chain
 def clean_sentence(text: str) -> str:
     """
     Returns a cleaned string
-    """
+    """ 
     text = re.sub(r'[\.\?\!\,\:\;\"\*\“\_\-\”\'\’\[\]\(\)\@\%]', '', text)
     text = text.lower()
     text = [word for word in text.split() if word not in stopwords.words('english')]
