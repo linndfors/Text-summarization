@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Summarization</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .input-container {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .main-titles {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .output-container {
+            flex: 1;
+            margin-right: 50px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+        }
+
+        .output-container p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        // Clear the input field on page load
+        window.onload = function() {
+            document.getElementById('input-text').value = '';
+        };
+    </script>
+</head>
+<body>
+    <div class="main-titles">
+        <h2>Input:</h2>
+        <h2>Output:</h2>
+    </div>
+    <div class="container">
+        <div class="input-container">
+            <form method="POST">
+                <textarea id="input-text" name="input_text" rows="10" cols="50"></textarea>
+                <br>
+                <input class="submit-button" type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="output-container">
+            <p>{{ output_text }}</p>
+        </div>
+    </div>
+</body>
+</html>
