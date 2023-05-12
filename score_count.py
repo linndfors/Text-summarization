@@ -1,10 +1,11 @@
 import numpy as np
-from math import sqrt
+from cmath import sqrt
 from reduced_svd import reduced_svd
 
 def count_score(V, S):
-    num_cols = len(V[0])
-    num_rows = len(V[1])
+    # print(V[0])
+    num_cols = len(V[1])
+    num_rows = len(V[0])
     scores = list()
     for i in range(num_rows):
         score = 0
@@ -29,4 +30,4 @@ def test():
     print(U@S@VT)
     print(count_score(VT, S))
 
-test()
+# test()
