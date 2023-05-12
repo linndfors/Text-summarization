@@ -1,5 +1,6 @@
 from tf_idf import *
 import numpy as np
+from reduced_svd import reduced_svd
 from rsvd import r_svd
 
 with open("test_datasets/test1.txt", "r") as article:
@@ -39,5 +40,7 @@ r = 400
 q = 1
 p = 5
 
-U, S, VT = r_svd(matrix, r, q, p)
-print(U, S, VT)
+# U, S, Vt = r_svd(matrix, r, q, p)
+U, S, Vt = reduced_svd(matrix)
+
+print(U, S, Vt)

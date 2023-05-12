@@ -4,8 +4,10 @@ from numpy.linalg import eigh, norm
 
 
 
-A = np.array([[3, 2, 2],
-            [2, 3, -2]])
+# A = np.array([[3, 2, 2],
+#             [2, 3, -2]])
+
+A = np.array([[1, 2, 3, 4], [2, 7, 4, 5], [3, 4, 3, 8], [4, 5, 8, 3]])
 
 print(A)  
 
@@ -83,16 +85,16 @@ def compute_svd(A):
     D = np.zeros((n,m))
     np.fill_diagonal(D, singular_vals)
 
-    matr = normalise(A@V) @ D
+    # matr = normalise(A@V) @ D
 
-    return U, D, V, matr
+    return U, D, V
 
-U, D, V, matr = compute_svd(A)
+U, D, V = compute_svd(A)
 
 # print(V.T@D@U)
-print(U)
-print(matr)
-print(D)
-print(V.T)
+# print(U)
+# print(D)
+# print(V.T)
+print(U@D@V.T)
 
 # print(U@D@V.T)

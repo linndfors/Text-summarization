@@ -1,4 +1,5 @@
 import numpy as np
+from reduced_svd import reduced_svd
 
 
 
@@ -14,7 +15,7 @@ def r_svd(M, r_reducing_size, q_iteration, p_over_sampling):
     Q, R = np.linalg.qr(Z, mode='reduced')
 
     Y_proj = Q.T @ M
-    UY, S, VT = np.linalg.svd(Y_proj, full_matrices=0)
+    UY, S, VT = reduced_svd(Y_proj)
     U = Q @ UY
 
     return U, S, VT
