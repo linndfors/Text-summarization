@@ -1,46 +1,41 @@
-from tf_idf import *
 import numpy as np
-from reduced_svd import reduced_svd
-from rsvd import r_svd
+from src.reduced_svd import reduced_svd
+from src.parser import parse
+from src.score_count import count_score
+import sys
+import time
 
-with open("test_datasets/test1.txt", "r") as article:
-    data = article.read()
+def main(path: str, n: int) -> None:
+    """
+    Find the most important n sentences
+    """
+    r = 70
+    q = 5
+    p = 5
 
-sentences = nltk.sent_tokenize(data)
+    data_frame, sentence_list = parse(path)
+    sentence_list = np.array(sentence_list)
+    matrix_of_words = data_frame.values
 
-tokens = []
-for sentence in sentences:
-    tokens.append(nltk.word_tokenize(sentence))
+    start_time = time.time()
+    U, S, Vt = reduced_svd(matrix_of_words.T)
+    # U, S, Vt = np.linalg.svd(matrix_of_words.T)
+    # U, S, Vt = r_svd(matrix_of_words.T, r, q, p)
+    finish_time = time.time()
+    print("Time: ", finish_time - start_time)
 
-uniqueWords = set(nltk.word_tokenize(data))
-
-bagOfWords = []
-for token in tokens:
-    tokenBag = dict.fromkeys(uniqueWords, 0)
-    for word in token:
-        tokenBag[word] += 1
-    bagOfWords.append(tokenBag)
-
-tfList = []
-for n in range(len(tokens)):
-    tfList.append(computeTF(bagOfWords[n], tokens[n]))
-
-idfList = computeIDF(bagOfWords)
+    scores_for_sentences = np.array(count_score(Vt, S))
+    indices_of_scores = np.argsort(-scores_for_sentences)
+    best_sentences = sentence_list[indices_of_scores][: n]
+    for sentence in best_sentences:
+        print(sentence)
 
 
-tfidfList = []
-for n in range(len(tfList)):
-    tfidfList.append(computeTFIDF(tfList[n], idfList))
-df = pd.DataFrame.from_dict(tfidfList)
-df.to_csv("test_tfidf.csv")
-# print(df)
-matrix = df.values
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Please provide two arguments.")
+        sys.exit(1)
 
-r = 400
-q = 1
-p = 5
-
-# U, S, Vt = r_svd(matrix, r, q, p)
-U, S, Vt = reduced_svd(matrix)
-
-print(U, S, Vt)
+    path = sys.argv[1]
+    cutter_idx = int(sys.argv[2])
+    main(path, cutter_idx)

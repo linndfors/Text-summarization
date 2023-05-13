@@ -1,12 +1,9 @@
 import numpy as np
-from reduced_svd import reduced_svd
-
-
+from src.reduced_svd import reduced_svd
 
 
 def r_svd(M, r_reducing_size, q_iteration, p_over_sampling):
     col_space = M.shape[1]
-    # print(col_space)
     P_proj = np.random.randn(col_space, r_reducing_size + p_over_sampling)
     Z = M @ P_proj
     for i in range(q_iteration):

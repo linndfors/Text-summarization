@@ -1,7 +1,9 @@
 import re
-from tf_idf import *
+from src.tf_idf import *
 from nltk.corpus import stopwords
 from itertools import chain
+import nltk
+import pandas as pd
 # Run this once to download stopwords for text cleaning
 # nltk.download('stopwords')
 
@@ -38,14 +40,14 @@ def clean_file(file_path: str) -> (dict, list):
             tokenBag[word] += 1
         word_dict.append(tokenBag)
 
-    return word_dict, tokens
+    return word_dict, tokens, sentences
 
 
 def parse(target_file: str) -> pd.DataFrame:
     """
     Returns a dataframe of vectorised text
     """
-    word_dict, tokens = clean_file(target_file)
+    word_dict, tokens, sentence_list = clean_file(target_file)
 
     tfList = []
     for n in range(len(tokens)):
@@ -57,7 +59,6 @@ def parse(target_file: str) -> pd.DataFrame:
     for n in range(len(tfList)):
         tfidfList.append(computeTFIDF(tfList[n], idfList))
     df = pd.DataFrame.from_dict(tfidfList)
-    df.to_csv("test_tfidf.csv")
-    return df
+    return df, sentence_list
 
-print(parse(r"test_datasets\test1.txt"))
+# print(parse(r"test_datasets/test1.txt"))
