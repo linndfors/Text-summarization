@@ -16,14 +16,17 @@ def clean_sentence(text: str) -> str:
     text = [word for word in text.split() if word not in stopwords.words('english')]
     return " ".join(text)
 
-def clean_file(file_path: str) -> (dict, list):
+def clean_file(file_path: str, app_flag) -> (dict, list):
     """
     Returns a cleaned word dict and tokens list from the txt file
     """
-    path = file_path
+    if not app_flag:
+        path = file_path
 
-    with open(path, "r", encoding="utf-8") as file:
-        data = file.read()
+        with open(path, "r", encoding="utf-8") as file:
+            data = file.read()
+    else:
+        data = file_path
     sentences = nltk.sent_tokenize(data)
 
     tokens = []
@@ -43,11 +46,11 @@ def clean_file(file_path: str) -> (dict, list):
     return word_dict, tokens, sentences
 
 
-def parse(target_file: str) -> pd.DataFrame:
+def parse(target_file: str, app_flag) -> pd.DataFrame:
     """
     Returns a dataframe of vectorised text
     """
-    word_dict, tokens, sentence_list = clean_file(target_file)
+    word_dict, tokens, sentence_list = clean_file(target_file, app_flag)
 
     tfList = []
     for n in range(len(tokens)):

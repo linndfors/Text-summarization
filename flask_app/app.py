@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 
+from main import find_sentence
+
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -14,9 +16,10 @@ def index():
 def process_input(input_text):
     # Remove the last letter from the input text
     # call our function
-    processed_text = input_text
-    processed_text += "\nhere will be summarized text!!!!"
-    return processed_text
+    processed_text = find_sentence(input_text, 3, 1)
+    result = " ".join(processed_text)
+    # processed_text += "\nhere will be summarized text!!!!"
+    return result
 
 if __name__ == '__main__':
     app.run(debug=True)
