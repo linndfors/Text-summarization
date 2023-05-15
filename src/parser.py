@@ -1,32 +1,30 @@
 import re
-from src.tf_idf import *
+from tf_idf import *
 from nltk.corpus import stopwords
 from itertools import chain
-import nltk
-import pandas as pd
 # Run this once to download stopwords for text cleaning
 # nltk.download('stopwords')
 
 def clean_sentence(text: str) -> str:
     """
     Returns a cleaned string
-    """ 
-    text = re.sub(r'[\.\?\!\,\:\;\"\*\“\_\-\”\'\’\[\]\(\)\@\%]', '', text)
+    """
+    text = re.sub(r'[\.\?\!\,\:\;\"*\“\_\-\”\'\’\[\]\(\)\@\%\/\+\°]', '', text)
+    pattern = r'[\d\.]+'
+    text = re.sub(pattern, '', text)
+
     text = text.lower()
     text = [word for word in text.split() if word not in stopwords.words('english')]
     return " ".join(text)
 
-def clean_file(file_path: str, app_flag) -> (dict, list):
+def process_file(file_path: str) -> (dict, list):
     """
     Returns a cleaned word dict and tokens list from the txt file
     """
-    if not app_flag:
-        path = file_path
+    path = file_path
 
-        with open(path, "r", encoding="utf-8") as file:
-            data = file.read()
-    else:
-        data = file_path
+    with open(path, "r", encoding="utf-8") as file:
+        data = file.read()
     sentences = nltk.sent_tokenize(data)
 
     tokens = []
@@ -43,17 +41,19 @@ def clean_file(file_path: str, app_flag) -> (dict, list):
             tokenBag[word] += 1
         word_dict.append(tokenBag)
 
-    return word_dict, tokens, sentences
+    return word_dict, tokens
 
 
-def parse(target_file: str, app_flag) -> pd.DataFrame:
+def parse(target_file: str) -> pd.DataFrame:
     """
     Returns a dataframe of vectorised text
     """
-    word_dict, tokens, sentence_list = clean_file(target_file, app_flag)
+    word_dict, tokens = process_file(target_file)
 
     tfList = []
     for n in range(len(tokens)):
+        if len(tokens[n]) == 0:
+            continue
         tfList.append(computeTF(word_dict[n], tokens[n]))
 
     idfList = computeIDF(word_dict)
@@ -62,6 +62,7 @@ def parse(target_file: str, app_flag) -> pd.DataFrame:
     for n in range(len(tfList)):
         tfidfList.append(computeTFIDF(tfList[n], idfList))
     df = pd.DataFrame.from_dict(tfidfList)
-    return df, sentence_list
+    df.to_csv("test_tfidf.csv")
+    return df
 
-# print(parse(r"test_datasets/test1.txt"))
+# print(parse(r"test_datasets\test1.txt"))
