@@ -1,6 +1,6 @@
 # LSA based extractive text summarization
 
-### What is it?
+## What is it?
 
 
 ## How to use it?
