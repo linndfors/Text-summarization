@@ -1,61 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Text Summarization</title>
-    <style>
-        .container {
-            display: flex;
-        }
-
-        .input-container {
-            flex: 1;
-            padding: 10px;
-        }
-
-        .main-titles {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .output-container {
-            flex: 1;
-            margin-right: 50px;
-            padding: 10px;
-            border: 1px solid black;
-        }
-
-        .submit-button {
-            margin-top: 20px;
-        }
-
-        .output-container p {
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/static/index.css" />
     <script>
-        // Clear the input field on page load
-        window.onload = function() {
-            document.getElementById('input-text').value = '';
-        };
+      window.onload = function () {
+        document.getElementById("input-text").value = "";
+        document.getElementById("output-area").value = "";
+      };
     </script>
-</head>
-<body>
-    <div class="main-titles">
-        <h2>Input:</h2>
-        <h2>Output:</h2>
-    </div>
+  </head>
+  <body>
     <div class="container">
-        <div class="input-container">
-            <form method="POST">
-                <textarea id="input-text" name="input_text" rows="10" cols="50"></textarea>
-                <br>
-                <input class="submit-button" type="submit" value="Submit">
-            </form>
-        </div>
+      <div class="input-container">
+        <p class="title">Input:</p>
+        <form method="POST">
+          <textarea
+            class="input-text"
+            name="input_text"
+            rows="10"
+            cols="50"
+          ></textarea>
+          <br />
+          <p class="title-2">select number of sentences in summary:</p>
+          <br />
+          <select class="num-selection" name="num-selection">
+            {% for num in range(1, 101) %}
+            <option value="{{ num }}">{{ num }}</option>
+            {% endfor %}
+          </select>
+          <br />
+          <input class="submit-button" type="submit" value="summarize" />
+        </form>
+      </div>
 
-        <div class="output-container">
-            <p>{{ output_text }}</p>
-        </div>
+      <div class="output-container">
+        <p class="title">Summary:</p>
+        <p class="output-area">{{ output_text }}</p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

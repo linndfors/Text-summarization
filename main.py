@@ -26,6 +26,7 @@ def find_sentence(path: str, n: int, app_flag = 0) -> None:
     scores_for_sentences = np.array(count_score(Vt, S))
     indices_of_scores = np.argsort(-scores_for_sentences)
     best_sentences = sentence_list[indices_of_scores][: n]
+    best_sentences.sort()
     # for sentence in best_sentences:
     #     print(sentence)
     return best_sentences
