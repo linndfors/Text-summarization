@@ -21,16 +21,17 @@
             rows="10"
             cols="50"
           ></textarea>
-          <br />
-          <p class="title-2">select number of sentences in summary:</p>
-          <br />
+          <div class="text-and-submit-container">
+            <p class="title-2">select number of sentences in summary:</p>
+            <input class="submit-button" type="submit" value="summarize" />
+          </div>
           <select class="num-selection" name="num-selection">
             {% for num in range(1, 101) %}
             <option value="{{ num }}">{{ num }}</option>
             {% endfor %}
           </select>
           <br />
-          <input class="submit-button" type="submit" value="summarize" />
+
         </form>
       </div>
 

@@ -50,7 +50,7 @@ body {
 }
 
 .input-container .num-selection {
-  position: absolute;
+  /*position: absolute;*/
   outline: none;
   border: 5px solid rgba(45, 155, 240, 0.6);
   padding: 0.7%;
@@ -64,9 +64,13 @@ body {
 }
 
 .submit-button {
-  position: absolute;
+  /*position: absolute;*/
+  margin-left: 45px;
   left: 32%;
   top: 46%;
+  width: 300px;
+  height: 50px;
+  margin-top: 30px;
   font-family: "Poppins", sans-serif;
   border: none;
   font-style: normal;
@@ -76,7 +80,6 @@ body {
   text-transform: uppercase;
   background-color: rgba(45, 155, 240, 0.6);
   border-radius: 15px;
-  padding: 1%;
 }
 
 .submit-button:hover {
@@ -104,4 +107,9 @@ textarea {
   min-height: 23%;
   outline: none;
   padding: 5%;
+}
+
+.text-and-submit-container {
+  margin-top: 10px;
+  display: flex;
 }

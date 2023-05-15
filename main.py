@@ -5,7 +5,7 @@ from src.score_count import count_score
 import sys
 import time
 
-def find_sentence(path: str, n: int, app_flag = 0) -> None:
+def find_sentence(path: str, n: int, app_flag = 0):
     """
     Find the most important n sentences
     """
@@ -27,8 +27,8 @@ def find_sentence(path: str, n: int, app_flag = 0) -> None:
     indices_of_scores = np.argsort(-scores_for_sentences)
     best_sentences = sentence_list[indices_of_scores][: n]
     best_sentences.sort()
-    # for sentence in best_sentences:
-    #     print(sentence)
+    for sentence in best_sentences:
+        print(sentence)
     return best_sentences
 
 
