@@ -1,7 +1,9 @@
 # LSA based extractive text summarization
 
-Use it to extract n most important sentences from the text.
+### What is it?
 
+
+## How to use it?
 ### To run the project via terminal:
 1. Clone the repository < br/>
 2. Install all required Python libraries by running
