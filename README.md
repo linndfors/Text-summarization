@@ -1,4 +1,4 @@
-# LSA based extractive text summarization
+# LSA based Extractive Text Summarization
 
 ## What is it?
 This is **LSA based Extractive Text Summarization project**. You can use it to extract n most important sentences from the given text. The algorithms behind it - **TF-IDF** for text vectorization and **Singular Value Decomposition** to extract the most important information from the matrix. If you want to find out more about these approaches - check **Literature Overview**.
