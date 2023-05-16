@@ -1,0 +1,50 @@
+Henry Cavendish FRS (/ˈkævəndɪʃ/ KAV-ən-dish; 10 October 1731 – 24 February 1810) was an English natural philosopher and scientist who was an important experimental and theoretical chemist and physicist.
+He is noted for his discovery of hydrogen, which he termed "inflammable air".
+He described the density of inflammable air, which formed water on combustion, in a 1766 paper, On Factitious Airs.
+Antoine Lavoisier later reproduced Cavendish's experiment and gave the element its name.
+A shy man, Cavendish was distinguished for great accuracy and precision in his researches into the composition of atmospheric air, the properties of different gases, the synthesis of water, the law governing electrical attraction and repulsion, a mechanical theory of heat, and calculations of the density (and hence the mass) of the Earth.
+His experiment to measure the density of the Earth (which, in turn, allows the gravitational constant to be calculated) has come to be known as the Cavendish experiment.
+Henry Cavendish was born on 10 October 1731 in Nice, where his family was living at the time.
+His mother was Lady Anne de Grey, fourth daughter of Henry Grey, 1st Duke of Kent, and his father was Lord Charles Cavendish, the third son of William Cavendish, 2nd Duke of Devonshire.
+Henry Cavendish was styled as "The Honourable Henry Cavendish".
+From the age of 11 Henry attended Newcome's School, a private school near London.
+At the age of 18 (on 24 November 1748) he entered the University of Cambridge in St Peter's College, now known as Peterhouse, but left three years later on 23 February 1751 without taking a degree (at the time, a common practice).
+Lord Charles Cavendish spent his life firstly in politics and then increasingly in science, especially in the Royal Society of London.
+In 1758, he took Henry to meetings of the Royal Society and also to dinners of the Royal Society Club.
+In 1760, Henry Cavendish was elected to both these groups, and he was assiduous in his attendance after that.
+His first paper, Factitious Airs, appeared in 1766.
+Other committees on which he served included the committee of papers, which chose the papers for publication in the Philosophical Transactions of the Royal Society, and the committees for the transit of Venus (1769), for the gravitational attraction of mountains (1774), and for the scientific instructions for Constantine Phipps's expedition (1773) in search of the North Pole and the Northwest Passage.
+In 1773, Henry joined his father as an elected trustee of the British Museum, to which he devoted a good deal of time and effort.
+About the time of his father's death, Cavendish began to work closely with Charles Blagden, an association that helped Blagden enter fully into London's scientific society.
+Cavendish found that a definite, peculiar, and highly inflammable gas, which he referred to as "Inflammable Air", was produced by the action of certain acids on certain metals.
+Although others, such as Robert Boyle, had prepared hydrogen gas earlier, Cavendish is usually given the credit for recognizing its elemental
+nature.
+In 1777, Cavendish discovered that air exhaled by mammals is converted to "fixed air" (carbon dioxide), not "phlogisticated air" as predicted by Joseph Priestley.
+Also, by dissolving alkalis in acids, Cavendish produced carbon dioxide, which he collected, along with other gases, in bottles inverted over water or mercury.
+He then measured their solubility in water and their specific gravity, and noted their combustibility.
+He concluded in his 1778 paper "General Considerations on Acids" that respirable air constitutes acidity.
+Cavendish was awarded the Royal Society's Copley Medal for this paper.
+In 1783, Cavendish published a paper on eudiometry (the measurement of the goodness of gases for breathing).
+He described a new eudiometer of his invention, with which he achieved the best results to date, using what in other hands had been the inexact method of measuring gases by weighing them.
+Then, after a repetition of a 1781 experiment performed by Priestley, Cavendish published a paper on the production of pure water by burning hydrogen in "dephlogisticated air" (air in the process of combustion, now known to be oxygen).
+Cavendish concluded that rather than being synthesized, the burning of hydrogen caused water to be condensed from the air.
+Some physicists interpreted hydrogen as pure phlogiston.
+Cavendish reported his findings to Priestley no later than March 1783 but did not publish them until the following year.
+The Scottish inventor James Watt published a paper on the composition of water in 1783; controversy about who made the discovery first ensued.
+In 1785, Cavendish investigated the composition of common (i.e., atmospheric) air, obtaining impressively accurate results.
+He conducted experiments in which hydrogen and ordinary air were combined in known ratios and then exploded with a spark of electricity.
+Furthermore, he also described an experiment in which he was able to remove, in modern terminology, both the oxygen and nitrogen gases from a sample of atmospheric air until only a small bubble of unreacted gas was left in the original sample.
+Using his observations, Cavendish observed that, when he had determined the amounts of phlogisticated air (nitrogen) and dephlogisticated air (oxygen), there remained a volume of gas amounting to 1/120 of the original volume of nitrogen.
+By careful measurements, he was led to conclude that "common air consists of one part of dephlogisticated air [oxygen], mixed with four of phlogisticated [nitrogen]."
+In the 1890s, two British physicists, William Ramsay and Lord Rayleigh, realized that their newly discovered inert gas, argon, was responsible for Cavendish's problematic residue; he had not made an error.
+What he had done was perform rigorous quantitative experiments, using standardized instruments and methods, aimed at reproducible results; taken the mean of the result of several experiments; and identified and allowed for sources of error.
+The balance that he used, made by a craftsman named Harrison, was the first of the precision balances of the 18th century, and as accurate as Lavoisier's.
+Cavendish worked with his instrument makers, generally improving existing instruments rather than inventing wholly new ones.
+Cavendish, as indicated above, used the language of the old phlogiston theory in chemistry.
+In 1787, he became one of the earliest outside France
+to convert to the new antiphlogistic theory of Lavoisier, though he remained skeptical about the nomenclature of the new theory.
+He also objected to Lavoisier's identification of heat as having a material or elementary basis.
+Working within the framework of Newtonian mechanism, Cavendish had tackled the problem of the nature of heat in the 1760s, explaining heat as the result of the motion of matter.
+In 1783, he published a paper on the temperature at which mercury freezes and in that paper made use of the idea of latent heat, although he did not use the term because he believed that it implied acceptance of a material theory of heat.
+He made his objections explicit in his 1784 paper on air.
+Cavendish's electrical and chemical experiments, like those on heat, had begun while he lived with his father in a laboratory in their London house.
