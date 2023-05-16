@@ -1,12 +1,13 @@
 from cmath import sqrt
 import numpy as np
 
-def count_score(V: np.array, S: np.array) -> list:
+def count_score(Vt: np.array, S: np.array) -> list:
     """
     Count scores for every sentence in text
     """
-    num_cols = len(V[1])
-    num_rows = len(V[0])
+    V = Vt.T
+    num_rows = V.shape[0]
+    num_cols = V.shape[1]
     scores = list()
     for i in range(num_rows):
         score = 0
