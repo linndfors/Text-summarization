@@ -15,7 +15,7 @@ pip install -r requirements.txt
 python3 main.py <path to .txt file> <number of sentences in summary>
 ```
 ### To use our web application:
-1. 1. Clone the repository < br/>
+1. Clone the repository < br/>
 2. Install all required Python libraries by running
 ```
 pip install -r requirements.txt
