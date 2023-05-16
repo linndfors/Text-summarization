@@ -1,7 +1,7 @@
 # LSA based Extractive Text Summarization
 
 ## What is it?
-This is **LSA based Extractive Text Summarization project**. You can use it to extract n most important sentences from the given text. The algorithms behind it - **TF-IDF** for text vectorization and **Singular Value Decomposition** to extract the most important information from the matrix. If you want to find out more about these approaches - check **Literature Overview**.
+This is **LSA based Extractive Text Summarization project**. You can use it to extract n most important sentences from the given text. The algorithms behind it - **TF-IDF** for text vectorization and **Singular Value Decomposition** to extract the most important information from the matrix.
 
 ## How to use it?
 ### To run the project via terminal:
@@ -27,4 +27,3 @@ cd flask_app
 5. Run app.py file
 ### Also, you could check Google Colab <br/>
 https://colab.research.google.com/drive/1eYxe-qh2PI3qME9tfmmZqUnG2Rf2W4St#scrollTo=-jjCpvg-LxeY
-## Literature overview
