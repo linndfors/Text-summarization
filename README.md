@@ -25,5 +25,6 @@ pip install -r requirements.txt
 cd flask_app
 ```
 5. Run app.py file
-
+### Also, you could check Google Colab <br/>
+https://colab.research.google.com/drive/1eYxe-qh2PI3qME9tfmmZqUnG2Rf2W4St#scrollTo=-jjCpvg-LxeY
 ## Literature overview
